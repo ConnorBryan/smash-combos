@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "smash-combos",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A one-stop-shop for kill confirms and combos in Smash Ultimate.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Connor Bryan <cchromium@gmail.com>",
   "dependencies": {
     "gatsby": "^2.0.53",
     "gatsby-image": "^2.0.20",
