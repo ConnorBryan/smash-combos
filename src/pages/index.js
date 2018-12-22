@@ -1,7 +1,8 @@
 import React from 'react'
+import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 
-import { getCharacters } from './helpers'
+import { getCharacters } from '../helpers'
 import './master.scss'
 
 export default function Master({ data }) {
@@ -10,9 +11,12 @@ export default function Master({ data }) {
   return (
     <section className="Master">
       <ul>
-        {characters.map(({ character, image }) => (
+        {characters.map(({ slug, character, image }) => (
           <li key={character}>
-            <Img fixed={image.childImageSharp.fixed} />
+            <Link to={slug}>
+              <h1>{character}</h1>
+              <Img fixed={image.childImageSharp.fixed} />
+            </Link>
           </li>
         ))}
       </ul>
@@ -36,6 +40,9 @@ export const query = graphql`
                 }
               }
             }
+          }
+          fields {
+            slug
           }
         }
       }
