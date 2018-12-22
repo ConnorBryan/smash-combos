@@ -1,7 +1,7 @@
 {
   "name": "smash-combos",
   "private": true,
-  "description": "A one-stop-shop for kill confirms and combos in Smash Ultimate.",
+  "description": "A one-stop-shop for kill confirms and combos in Super Smash Bros. Ultimate.",
   "version": "0.1.0",
   "author": "Connor Bryan <cchromium@gmail.com>",
   "dependencies": {
