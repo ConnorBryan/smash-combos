@@ -1,21 +1,44 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 
-import Image from '../components/image'
-import SEO from '../components/seo'
+import { getCharacters } from './helpers'
 import './master.scss'
 
-const IndexPage = () => (
-  <section className="Master">
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </section>
-)
+export default function Master({ data }) {
+  const characters = getCharacters(data)
 
-export default IndexPage
+  return (
+    <section className="Master">
+      <ul>
+        {characters.map(({ character, image }) => (
+          <li key={character}>
+            <Img fixed={image.childImageSharp.fixed} />
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+export const query = graphql`
+  query {
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          frontmatter {
+            character
+            image {
+              publicURL
+              childImageSharp {
+                fixed(width: 300, height: 300) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
