@@ -2,6 +2,7 @@
 
 .Layout {
   display: flex;
+  justify-content: center;
   min-height: 100vh;
   padding: $spacing-md;
   background: $darkest-grey;

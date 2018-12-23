@@ -32,19 +32,24 @@
     }
     &-stats {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
 
       &-shouter {
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding-left: $spacing-md;
-        border-left: 2px solid $primary;
+        justify-content: space-between;
 
-        > p {
-          margin-right: $spacing-sm;
+        &:first-of-type {
+          margin-bottom: $spacing-md;
+        }
+        &-stat {
+          flex: 3;
           text-transform: uppercase;
+        }
+        &-count {
+          flex: 1;
+          text-align: right;
         }
       }
     }

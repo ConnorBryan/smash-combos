@@ -5,6 +5,7 @@ $primary: #7289d9;
 $darkest-grey: #202224;
 $darker-grey: #2f3136;
 $dark-grey: #36393f;
+$light-grey: lighten($dark-grey, 10%);
 $almost-white: #eee;
 
 /* Spacing */
@@ -21,4 +22,8 @@ $font-primary: 'Raleway', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@mixin drop-shadow {
+  box-shadow: 0 1px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.12);
 }
