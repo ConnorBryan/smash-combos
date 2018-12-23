@@ -35,7 +35,7 @@ export default function Character({ data }) {
           {hasCombos ? (
             combos
           ) : (
-            <Panel>This character has no listed kill combos.</Panel>
+            <Panel>This character has no listed combos.</Panel>
           )}
         </Grouping>
         <div className="Character-back">
