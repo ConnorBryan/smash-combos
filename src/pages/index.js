@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 
-import { CharacterStrip } from '../components'
+import { CharacterStrip, Layout } from '../components'
 import { getCharacters } from '../helpers'
 import './index.scss'
 
@@ -9,7 +9,7 @@ export default function Master({ data }) {
   const characters = getCharacters(data)
 
   return (
-    <section className="Master">
+    <Layout>
       <ul>
         {characters.map(({ slug, character, image }) => (
           <li key={character}>
@@ -19,7 +19,7 @@ export default function Master({ data }) {
           </li>
         ))}
       </ul>
-    </section>
+    </Layout>
   )
 }
 

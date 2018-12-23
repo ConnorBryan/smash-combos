@@ -11,18 +11,6 @@ p {
   padding: 0;
 }
 
-body {
-  display: flex;
-  padding: $spacing-md;
-  background: $darkest-grey;
-  color: #eee;
-  font-family: $font-primary;
-
-  #___gatsby {
-    flex: 1 !important;
-  }
-}
-
 a:link,
 a:hover,
 a:active,

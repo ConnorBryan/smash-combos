@@ -1,0 +1,10 @@
+@import '../styles/styles.scss';
+
+.Layout {
+  display: flex;
+  min-height: 100vh;
+  padding: $spacing-md;
+  background: $darkest-grey;
+  color: #eee;
+  font-family: $font-primary;
+}
