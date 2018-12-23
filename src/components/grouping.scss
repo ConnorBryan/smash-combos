@@ -2,6 +2,7 @@
 
 .Grouping {
   margin-bottom: $spacing-md;
+  background: $darker-grey;
   border: 1px solid $primary;
   cursor: pointer;
 
@@ -11,7 +12,11 @@
     justify-content: space-between;
     padding: $spacing-md;
     border-bottom: 1px solid $primary;
-    font-size: $font-size-md;
+    font-size: $font-size-sm;
     text-transform: uppercase;
+  }
+  &-content {
+    padding: $spacing-md;
+    background: $darkest-grey;
   }
 }

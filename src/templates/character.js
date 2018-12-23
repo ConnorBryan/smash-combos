@@ -1,20 +1,43 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 
-import { Button, CharacterStrip, Grouping, Layout } from '../components'
+import { Button, CharacterStrip, Grouping, Layout, Panel } from '../components'
 import { getCharacter } from '../helpers'
 import './character.scss'
 
 export default function Character({ data }) {
-  const { character, image } = getCharacter(data)
+  const { character, image, attributes, killConfirms, combos } = getCharacter(
+    data
+  )
+  const hasAttributes = attributes.length > 0
+  const hasKillConfirms = killConfirms.length > 0
+  const hasCombos = combos.length > 0
 
   return (
     <Layout>
       <section className="Character">
         <CharacterStrip character={character} image={image} />
-        <Grouping title="Attributes" />
-        <Grouping title="Kill Confirms" />
-        <Grouping title="Combos" />
+        <Grouping title="Attributes">
+          {hasAttributes ? (
+            attributes
+          ) : (
+            <Panel>This character has no listed attributes.</Panel>
+          )}
+        </Grouping>
+        <Grouping title="Kill Confirms">
+          {hasKillConfirms ? (
+            killConfirms
+          ) : (
+            <Panel>This character has no listed kill confirms.</Panel>
+          )}
+        </Grouping>
+        <Grouping title="Combos">
+          {hasCombos ? (
+            combos
+          ) : (
+            <Panel>This character has no listed kill combos.</Panel>
+          )}
+        </Grouping>
         <div className="Character-back">
           <Link to="/">
             <Button>Back</Button>
