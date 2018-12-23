@@ -5,15 +5,22 @@ body,
 ul,
 li,
 h1,
-h2 {
+h2,
+p {
   margin: 0;
   padding: 0;
 }
 
 body {
-  padding: $spacing-sm;
+  display: flex;
+  padding: $spacing-md;
   background: $darkest-grey;
+  color: #eee;
   font-family: $font-primary;
+
+  #___gatsby {
+    flex: 1 !important;
+  }
 }
 
 a:link,

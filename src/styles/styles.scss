@@ -9,6 +9,15 @@ $dark-grey: #36393f;
 /* Spacing */
 $spacing-sm: 0.33rem;
 $spacing-md: 0.66rem;
+$spacing-lg: 1rem;
+$spacing-xl: 2rem;
 
 /* Fonts */
 $font-primary: 'Raleway', sans-serif;
+
+/* Mixins */
+@mixin perfectly-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

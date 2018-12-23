@@ -2,7 +2,7 @@
 
 .CharacterStrip {
   display: flex;
-  margin-bottom: $spacing-sm;
+  margin-bottom: $spacing-md;
   border: 1px solid $primary;
 
   .gatsby-image-wrapper,
@@ -10,11 +10,13 @@
     width: 100px !important;
     height: 100px !important;
     padding: $spacing-sm;
-    background: #000;
-    border-right: 1px solid $primary;
+    background: $darkest-grey;
   }
   &-image {
+    @include perfectly-centered();
+
     flex: 1;
+    border-right: 1px solid $primary;
   }
   &-details {
     flex: 3;
@@ -25,6 +27,7 @@
     background: $darker-grey;
 
     &-name {
+      margin-bottom: $spacing-lg;
       text-transform: uppercase;
     }
     &-stats {
@@ -36,6 +39,8 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        padding-left: $spacing-md;
+        border-left: 2px solid $primary;
 
         > p {
           margin-right: $spacing-sm;

@@ -1,3 +1,5 @@
 .Character {
-  background: green;
+  &-back {
+    text-align: right;
+  }
 }

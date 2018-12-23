@@ -1,7 +1,7 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { graphql, Link } from 'gatsby'
 
+import { CharacterStrip } from '../components'
 import { getCharacter } from '../helpers'
 import './character.scss'
 
@@ -10,8 +10,10 @@ export default function Character({ data }) {
 
   return (
     <section className="Character">
-      <h1>{character}</h1>
-      <Img fixed={image.childImageSharp.fixed} />
+      <CharacterStrip character={character} image={image} />
+      <div className="Character-back">
+        <Link to="/">Back</Link>
+      </div>
     </section>
   )
 }
