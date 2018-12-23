@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import Img from 'gatsby-image'
 
+import { CharacterStrip } from '../components'
 import { getCharacters } from '../helpers'
-import './master.scss'
+import './index.scss'
 
 export default function Master({ data }) {
   const characters = getCharacters(data)
@@ -14,8 +14,7 @@ export default function Master({ data }) {
         {characters.map(({ slug, character, image }) => (
           <li key={character}>
             <Link to={slug}>
-              <h1>{character}</h1>
-              <Img fixed={image.childImageSharp.fixed} />
+              <CharacterStrip character={character} image={image} />
             </Link>
           </li>
         ))}

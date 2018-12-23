@@ -1,0 +1,47 @@
+@import '../styles/styles.scss';
+
+.CharacterStrip {
+  display: flex;
+  margin-bottom: $spacing-sm;
+  border: 1px solid $primary;
+
+  .gatsby-image-wrapper,
+  .gatsby-image-wrapper img {
+    width: 100px !important;
+    height: 100px !important;
+    padding: $spacing-sm;
+    background: #000;
+    border-right: 1px solid $primary;
+  }
+  &-image {
+    flex: 1;
+  }
+  &-details {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: $spacing-md;
+    background: $darker-grey;
+
+    &-name {
+      text-transform: uppercase;
+    }
+    &-stats {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-shouter {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        > p {
+          margin-right: $spacing-sm;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

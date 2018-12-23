@@ -5,3 +5,8 @@ export const getCharacters = data =>
     ...frontmatter,
     ...fields,
   }))
+
+export const getDefaultCharacterFields = () => ({
+  killConfirms: [],
+  combos: [],
+})

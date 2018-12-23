@@ -1,0 +1,26 @@
+@import '../styles/styles.scss';
+
+html,
+body,
+ul,
+li,
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: $spacing-sm;
+  background: $darkest-grey;
+  font-family: $font-primary;
+}
+
+a:link,
+a:hover,
+a:active,
+a:visited,
+a:focus {
+  text-decoration: none;
+  color: #eee;
+}
