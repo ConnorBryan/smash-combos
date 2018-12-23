@@ -1,26 +1,56 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { graphql, Link } from 'gatsby'
 
-import { CharacterStrip, Layout } from '../components'
+import { Button, CharacterStrip, Input, Layout, Panel } from '../components'
 import { getCharacters } from '../helpers'
 import './index.scss'
 
-export default function Master({ data }) {
-  const characters = getCharacters(data)
+export default class Master extends Component {
+  state = {
+    filter: '',
+  }
 
-  return (
-    <Layout>
-      <ul>
-        {characters.map(({ slug, character, image }) => (
-          <li key={character}>
-            <Link to={slug}>
-              <CharacterStrip character={character} image={image} />
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </Layout>
-  )
+  handleFilterChange = ({ target: { value: filter } }) =>
+    this.setState({ filter })
+
+  clearFilter = () => this.setState({ filter: '' })
+
+  render() {
+    const { data } = this.props
+    const { filter } = this.state
+    const characters = getCharacters(data)
+    const matches = characters.filter(({ character }) =>
+      character.toLowerCase().includes(filter.toLowerCase())
+    )
+
+    return (
+      <Layout className="Master">
+        <div className="Master-controls">
+          <Input
+            placeholder="Filter characters..."
+            value={filter}
+            onChange={this.handleFilterChange}
+          />
+        </div>
+        <ul className="Master-characters">
+          {matches.length > 0 ? (
+            matches.map(({ slug, character, image }) => (
+              <li key={character}>
+                <Link to={slug}>
+                  <CharacterStrip character={character} image={image} />
+                </Link>
+              </li>
+            ))
+          ) : (
+            <Panel className="Master-characters-noMatch">
+              <p>No characters match the filter {filter}.</p>
+              <Button onClick={this.clearFilter}>Clear</Button>
+            </Panel>
+          )}
+        </ul>
+      </Layout>
+    )
+  }
 }
 
 export const query = graphql`

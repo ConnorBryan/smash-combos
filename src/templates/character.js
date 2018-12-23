@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 
-import { CharacterStrip, Layout } from '../components'
+import { Button, CharacterStrip, Layout } from '../components'
 import { getCharacter } from '../helpers'
 import './character.scss'
 
@@ -13,7 +13,9 @@ export default function Character({ data }) {
       <section className="Character">
         <CharacterStrip character={character} image={image} />
         <div className="Character-back">
-          <Link to="/">Back</Link>
+          <Link to="/">
+            <Button>Back</Button>
+          </Link>
         </div>
       </section>
     </Layout>
