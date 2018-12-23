@@ -9,6 +9,7 @@ $darker-grey: #2f3136;
 $dark-grey: #36393f;
 $light-grey: lighten($dark-grey, 10%);
 $almost-white: #eee;
+$almost-black: #111;
 
 /* Spacing */
 $spacing-sm: 0.33rem;
@@ -16,12 +17,16 @@ $spacing-md: 0.66rem;
 $spacing-lg: 1rem;
 $spacing-xl: 2rem;
 $spacing-xxl: 3rem;
+$letter-spacing: 0.2rem;
 
 /* Fonts */
 $font-primary: 'Raleway', sans-serif;
 $font-size-sm: 18px;
 $font-size-md: 20px;
 $font-size-lg: 28px;
+
+/* Etc */
+$header-height: 8vh;
 
 /* Mixins */
 @mixin perfectly-centered {

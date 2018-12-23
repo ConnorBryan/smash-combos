@@ -1,9 +1,12 @@
 @import '../styles/styles.scss';
 
 .Layout {
-  min-height: 100vh;
-  padding: $spacing-md;
   background: $darkest-grey;
   color: $almost-white;
   font-family: $font-primary;
+
+  &-content {
+    margin-top: 12vh;
+    padding: $spacing-md;
+  }
 }

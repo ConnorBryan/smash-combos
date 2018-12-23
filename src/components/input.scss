@@ -5,8 +5,9 @@
   width: 100%;
   height: 70%;
   padding: $spacing-md;
-  background: $light-grey;
-  border: 1px solid $primary;
+  background: $dark-grey;
+  border: none;
+  border-bottom: 1px solid $primary;
   color: $almost-white;
   font-size: $font-size-lg;
 }

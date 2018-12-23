@@ -15,6 +15,10 @@ html {
   font-size: 16px;
 }
 
+body {
+  background: $darkest-grey;
+}
+
 ul {
   list-style-type: none;
 }
@@ -31,7 +35,7 @@ a:focus {
 .Master {
   &-controls {
     position: fixed;
-    top: 0;
+    top: 11vh;
     left: 0;
     z-index: 3;
     width: 100%;
