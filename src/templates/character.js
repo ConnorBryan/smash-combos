@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 
-import { Button, CharacterStrip, Layout } from '../components'
+import { Button, CharacterStrip, Grouping, Layout } from '../components'
 import { getCharacter } from '../helpers'
 import './character.scss'
 
@@ -12,6 +12,9 @@ export default function Character({ data }) {
     <Layout>
       <section className="Character">
         <CharacterStrip character={character} image={image} />
+        <Grouping title="Attributes" />
+        <Grouping title="Kill Confirms" />
+        <Grouping title="Combos" />
         <div className="Character-back">
           <Link to="/">
             <Button>Back</Button>

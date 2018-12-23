@@ -1,0 +1,17 @@
+@import '../styles/styles.scss';
+
+.Grouping {
+  margin-bottom: $spacing-md;
+  border: 1px solid $primary;
+  cursor: pointer;
+
+  &-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-md;
+    border-bottom: 1px solid $primary;
+    font-size: $font-size-md;
+    text-transform: uppercase;
+  }
+}
