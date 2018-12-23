@@ -34,7 +34,7 @@ a:focus {
     height: 10vh;
   }
   &-characters {
-    height: calc(90vh - $spacing-md);
+    height: 90vh;
     margin-top: $spacing-md;
     overflow: auto;
 
