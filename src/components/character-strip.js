@@ -9,9 +9,10 @@ export default function CharacterStrip({
   image,
   killConfirms,
   combos,
+  clickable,
 }) {
   return (
-    <section className="CharacterStrip">
+    <section className={`CharacterStrip ${clickable && 'clickable'}`}>
       <div className="CharacterStrip-image">
         <Img fixed={image.childImageSharp.fixed} />
       </div>

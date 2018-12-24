@@ -51,6 +51,7 @@ export default class Master extends Component {
                       attributes={attributes}
                       killConfirms={killConfirms}
                       combos={combos}
+                      clickable={true}
                     />
                   </Link>
                 </li>

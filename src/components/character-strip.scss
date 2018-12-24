@@ -4,13 +4,20 @@
   display: flex;
   margin-bottom: $spacing-md;
   border: 1px solid $primary;
+  background: $darkest-grey;
+  transition: background 0.1s ease-in;
 
+  &.clickable {
+    &:active,
+    &:hover {
+      background: $dark-grey;
+    }
+  }
   .gatsby-image-wrapper,
   .gatsby-image-wrapper img {
     width: 100px !important;
     height: 100px !important;
     padding: $spacing-sm;
-    background: $darkest-grey;
   }
   &-image {
     @include perfectly-centered();
@@ -24,7 +31,6 @@
     flex-direction: column;
     justify-content: center;
     padding: $spacing-md;
-    background: $darker-grey;
 
     &-name {
       margin-bottom: $spacing-lg;
