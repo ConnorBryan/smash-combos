@@ -19,7 +19,9 @@ export default function Character({ data }) {
         <CharacterStrip
           character={character}
           image={image}
+          attributes={attributes}
           killConfirms={killConfirms}
+          combos={combos}
         />
         <Grouping title="Attributes">
           {hasAttributes ? (
@@ -46,7 +48,16 @@ export default function Character({ data }) {
         </Grouping>
         <Grouping title="Combos">
           {hasCombos ? (
-            combos
+            combos.map(({ input, light, medium, heavy }) => (
+              <Panel key={input}>
+                <h2>{input}</h2>
+                <ul>
+                  <li>Light - {light}</li>
+                  <li>Medium - {medium}</li>
+                  <li>Heavy - {heavy}</li>
+                </ul>
+              </Panel>
+            ))
           ) : (
             <Panel>This character has no listed combos.</Panel>
           )}
