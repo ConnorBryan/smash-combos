@@ -38,7 +38,9 @@ a:focus {
   font-family: $font-primary;
 
   &-content {
-    margin-top: 12vh;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 8vh;
     padding: $spacing-md;
   }
 }

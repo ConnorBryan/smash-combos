@@ -1,5 +1,8 @@
+@import '../styles/styles.scss';
+
 .Character {
   flex: 1;
+  margin: $spacing-xl 0;
 
   &-back {
     text-align: right;
