@@ -34,13 +34,28 @@ export default class Master extends Component {
         </div>
         <ul className="Master-characters">
           {matches.length > 0 ? (
-            matches.map(({ slug, character, image }) => (
-              <li key={character}>
-                <Link to={slug}>
-                  <CharacterStrip character={character} image={image} />
-                </Link>
-              </li>
-            ))
+            matches.map(
+              ({
+                slug,
+                character,
+                image,
+                attributes,
+                killConfirms,
+                combos,
+              }) => (
+                <li key={character}>
+                  <Link to={slug}>
+                    <CharacterStrip
+                      character={character}
+                      image={image}
+                      attributes={attributes}
+                      killConfirms={killConfirms}
+                      combos={combos}
+                    />
+                  </Link>
+                </li>
+              )
+            )
           ) : (
             <Panel className="Master-characters-noMatch">
               <p>No characters match the filter {filter}.</p>
@@ -69,6 +84,9 @@ export const query = graphql`
                 }
               }
             }
+            attributes
+            killConfirms
+            combos
           }
           fields {
             slug

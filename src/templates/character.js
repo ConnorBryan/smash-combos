@@ -16,7 +16,11 @@ export default function Character({ data }) {
   return (
     <Layout>
       <section className="Character">
-        <CharacterStrip character={character} image={image} />
+        <CharacterStrip
+          character={character}
+          image={image}
+          killConfirms={killConfirms}
+        />
         <Grouping title="Attributes">
           {hasAttributes ? (
             attributes
@@ -26,7 +30,16 @@ export default function Character({ data }) {
         </Grouping>
         <Grouping title="Kill Confirms">
           {hasKillConfirms ? (
-            killConfirms
+            killConfirms.map(({ input, light, medium, heavy }) => (
+              <Panel key={input}>
+                <h2>{input}</h2>
+                <ul>
+                  <li>Light - {light}</li>
+                  <li>Medium - {medium}</li>
+                  <li>Heavy - {heavy}</li>
+                </ul>
+              </Panel>
+            ))
           ) : (
             <Panel>This character has no listed kill confirms.</Panel>
           )}
@@ -61,6 +74,9 @@ export const query = graphql`
             }
           }
         }
+        attributes
+        killConfirms
+        combos
       }
     }
   }
